@@ -7,7 +7,7 @@ const hosts = {};
 router.get('', function(req, res, next) {
   const host = handleHost(req.hostname, req.connection.remoteAddress.split(':')[req.connection.remoteAddress.split(':').length - 1]);
   console.log(hosts);
-  res.json({host});
+  res.json({host, hosts});
 });
 
 const handleHost = function(hostname, ip){
