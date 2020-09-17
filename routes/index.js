@@ -6,6 +6,7 @@ const hosts = {};
 
 router.get('', function(req, res, next) {
   console.log(req.headers.host, req.connection.remoteAddress);
+  console.log(req.connection.address());
   const host = handleHost(req.headers.host, req.connection.remoteAddress.split(':')[req.connection.remoteAddress.split(':').length - 1]);
   console.log(hosts);
   console.log({host, hosts});
