@@ -5,6 +5,7 @@ const dns = require('dns');
 const hosts = {};
 
 router.get('', function(req, res, next) {
+  console.log(req.hostname, req.connection.remoteAddress);
   const host = handleHost(req.hostname, req.connection.remoteAddress.split(':')[req.connection.remoteAddress.split(':').length - 1]);
   console.log(hosts);
   console.log({host, hosts});
