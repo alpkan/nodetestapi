@@ -4,7 +4,6 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 
 const urlRouter = require('./routes/url');
-const indexRouter = require('./routes/index');
 
 const app = express();
 
@@ -15,6 +14,5 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use('/url', urlRouter);
-app.use('/', indexRouter);
 
 module.exports = app;
